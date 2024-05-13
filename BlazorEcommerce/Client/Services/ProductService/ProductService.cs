@@ -19,7 +19,7 @@ namespace BlazorEcommerce.Client.Services.ProductService
         public async Task GetProducts(string? categoryUrl = null)
         {
             var apiEndpoint = categoryUrl == null ? 
-                "api/product" : $"api/product/category/{categoryUrl}";
+                "api/product/featured" : $"api/product/category/{categoryUrl}";
            
             var result = await _http
                 .GetFromJsonAsync<ServiceResponse<List<Product>>>(apiEndpoint);
